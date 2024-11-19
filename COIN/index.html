@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COINGECKO</title>
+</head>
+<body>
+    <nav>
+        <span>
+        <span>Coins: <a href="">15,109</a></span>
+            <span>Exchanges: <a href="">1,148</a></span>
+            <span>Market Cap: <a href="">$2.696T</a> <svg class="num" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg><span class="cols">0.9%</span></span>
+            <span>24h Vol: <a href="">$169.475B</a></span>
+            <span>Dominance:<a href="">BTC 56.0%</a></span>
+                <span><a href="">ETH 13.1%</a></span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" fill="black" width="20px" height="15px"><path d="M311.9 260.8L160 353.6 8 260.8 160 0l151.9 260.8zM160 383.4L8 290.6 160 512l152-221.4-152 92.8z"/></svg><span>Gas:</span> <a href="">16.428 GWEI</a> 
+        </span>
+            <div class="login">
+                <button class="set"><svg xmlns="http://www.w3.org/2000/svg" height="17px" viewBox="0 -960 960 960" width="17px" fill="black"><path d="m370-80-16-128q-13-5-24.5-12T307-235l-119 50L78-375l103-78q-1-7-1-13.5v-27q0-6.5 1-13.5L78-585l110-190 119 50q11-8 23-15t24-12l16-128h220l16 128q13 5 24.5 12t22.5 15l119-50 110 190-103 78q1 7 1 13.5v27q0 6.5-2 13.5l103 78-110 190-118-50q-11 8-23 15t-24 12L590-80H370Zm70-80h79l14-106q31-8 57.5-23.5T639-327l99 41 39-68-86-65q5-14 7-29.5t2-31.5q0-16-2-31.5t-7-29.5l86-65-39-68-99 42q-22-23-48.5-38.5T533-694l-13-106h-79l-14 106q-31 8-57.5 23.5T321-633l-99-41-39 68 86 64q-5 15-7 30t-2 32q0 16 2 31t7 30l-86 65 39 68 99-42q22 23 48.5 38.5T427-266l13 106Zm42-180q58 0 99-41t41-99q0-58-41-99t-99-41q-59 0-99.5 41T342-480q0 58 40.5 99t99.5 41Zm-2-140Z"/></svg></button>
+                <button class="log-in"><strong>Login</strong></button>
+                <button class="sign"><strong>Sign Up</strong></button>
+            </div>
+    </nav>
+
+    <main>
+        <div class="logo">
+            <img src="https://static.coingecko.com/s/coingecko-logo-8903d34ce19ca4be1c81f0db30e924154750d208683fad7ae6f2ce06c76d0a56.png" alt="logo">
+        </div>
+        <div class="links">
+            <strong>Cryptocurrencies</strong>
+            <strong>Exchange</strong>
+            <strong>NFT</strong>
+            <strong>Learn</strong>
+            <strong>Products</strong>
+        </div>
+        <div class="candy">
+            <img src="data:image/jpeg;base64,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" alt="candy">
+            <strong>Candy</strong>
+            <img src="data:image/png;base64,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" alt="star">
+            <strong>Portfolio</strong>
+            <form action="search">
+                <input type="search" placeholder="Search....">
+            </form>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
+            <div class="ego"></div>
+        </div>
+    </main>
+    <section>
+        <div class="google">
+            <div class="arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="black"><path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/></svg>
+            </div>
+        <p>
+            Ad served by 
+            <strong>Google</strong>
+        </p>
+        <button class="ads">Ads options</button>
+        <button class="ads">Send feedback</button>
+        <button class="why">Why this ad? <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="gray"><path d="M440-280h80v-240h-80v240Zm40-320q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm0 520q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg></button>
+    </div>
+
+    <div class="price">
+        <h2> Cryptocurrency Prices by Market Cap </h2>
+        <p> The global cryptocurrency market cap today is $2.69 Trillion, a<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg><span>0.5%</span> change in the last 24 hours. <a href="">Read more </a></p>
+        <strong>Highlights</strong>
+        <svg class="highlights" xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="35px" fill="GREEN"><path d="M280-240q-100 0-170-70T40-480q0-100 70-170t170-70h400q100 0 170 70t70 170q0 100-70 170t-170 70H280Zm0-80h400q66 0 113-47t47-113q0-66-47-113t-113-47H280q-66 0-113 47t-47 113q0 66 47 113t113 47Zm400-40q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35ZM480-480Z"/></svg>
+    </div>
+    </section>
+
+    <div class="trend">
+        <div class="market">
+            <div class="cap">
+                <div class="texti">
+                    <strong>$2,690,999,947,602</strong>
+                <p>Market Cap<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg><a href="">0.5% </a></p>
+                    <img src="https://www.coingecko.com/total_market_cap.svg" alt="">
+            </div>
+                </div>
+                <div class="trade">
+                <div class="text">
+                    <strong> $171,970,256,234 </strong>
+                <p> 24h Trading Volume </p>
+                <img src="https://www.coingecko.com/total_volume.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="trending">
+            <div class="extra">
+                <div class="more">
+                    <h4>🔥 Trendings</h4>
+                    <a href="">View more 
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="gray"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>
+                    </a>
+                </div>
+            <div class="coin">
+                <p>🪙 NotCoin</p> 
+                <span>$03.0062647</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>
+                <span id="yoo">6.85%</span>
+            </div>
+            <div class="coin">
+                <p>💰 Nimiq</p> 
+                <span>$670.778452</span><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/> 
+                </svg><span id="yoo">6.85%</span>
+            </div>
+            <div class="coin">
+                <p>🌏 DodgeCoin</p>
+                 <span>$10.7980047</span>
+                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>
+                 <span id="yoo">6.85%</span>
+                </div>
+            </div>
+             
+        </div>
+    </div>
+
+    <div class="large">
+        <div class="extra">
+            <div class="more">
+                <h4>🚀 Largests Gainers</h4>
+                <a class="icon" href="">
+                    View more 
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="gray"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>
+                </a>
+            </div>
+            <div class="coin">
+                <p>🤖 Phantasma</p>
+                 <span>$0.1565617</span>
+                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>
+                 <span id="yoo">115.5%</span>
+                </div>
+            <div class="coin">
+                <p>🌀 ai16z</p> 
+                <span>$0.07016439</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>
+                <span id="yoo">92.6%</span>
+            </div>
+            <div class="coin">
+                <p>⚡ Numogram</p>
+                 <span>$0.0.0307148</span>
+                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>
+                 <span id="yoo">72.5%</span>
+                </div>
+        </div>
+    </div>
+    <div class="category">
+        <div class="light">
+            <p> 
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="GREEN"><path d="M640-160v-280h160v280H640Zm-240 0v-640h160v640H400Zm-240 0v-440h160v440H160Z"/></svg>
+                ALL
+            </p>
+            <span> 
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="gray"><path d="M120-80v-60h100v-30h-60v-60h60v-30H120v-60h120q17 0 28.5 11.5T280-280v40q0 17-11.5 28.5T240-200q17 0 28.5 11.5T280-160v40q0 17-11.5 28.5T240-80H120Zm0-280v-110q0-17 11.5-28.5T160-510h60v-30H120v-60h120q17 0 28.5 11.5T280-560v70q0 17-11.5 28.5T240-450h-60v30h100v60H120Zm60-280v-180h-60v-60h120v240h-60Zm180 440v-80h480v80H360Zm0-240v-80h480v80H360Zm0-240v-80h480v80H360Z"/></svg>
+                 <strong>Highlights</strong>
+            </span>
+        <span> 
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="gray"><path d="M345-120q-94 0-159.5-65.5T120-345q0-45 17-86t49-73l270-270q32-32 73-49t86-17q94 0 159.5 65.5T840-615q0 45-17 86t-49 73L504-186q-32 32-73 49t-86 17Zm266-286 107-106q20-20 31-47t11-56q0-60-42.5-102.5T615-760q-29 0-56 11t-47 31L406-611l205 205ZM345-200q29 0 56-11t47-31l106-107-205-205-107 106q-20 20-31 47t-11 56q0 60 42.5 102.5T345-200Z"/></svg> 
+        <strong>Pump.fun Ecosystem</strong> 
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="gray"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm0-80h640v-400H160v400Zm140-40-56-56 103-104-104-104 57-56 160 160-160 160Zm180 0v-80h240v80H480Z"/></svg>
+    </span>
+        <span> 
+            <svg class="cate" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="gray"><path d="m260-520 220-360 220 360H260ZM700-80q-75 0-127.5-52.5T520-260q0-75 52.5-127.5T700-440q75 0 127.5 52.5T880-260q0 75-52.5 127.5T700-80Zm-580-20v-320h320v320H120Zm580-60q42 0 71-29t29-71q0-42-29-71t-71-29q-42 0-71 29t-29 71q0 42 29 71t71 29Zm-500-20h160v-160H200v160Zm202-420h156l-78-126-78 126Zm78 0ZM360-340Zm340 80Z"/></svg> 
+            <strong>Categories</strong>
+        </span>
+        </div>
+        <div class="pumps">
+            <span>
+                <i>🔥</i>
+                <strong>  Zoo-Themed</strong>
+            </span>
+        <span>
+            <i>🔥</i>
+            <strong>  Pump-fun Ecosystem</strong>
+        </span>
+        <span>
+            <i>🔥</i>
+            <strong>  Elon Musk-Inspired</strong>
+        </span>
+        <button>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m668-380 152-130 120 10-176 153 52 227-102-62-46-198Zm-94-292-42-98 46-110 92 217-96-9ZM294-287l126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM173-120l65-281L20-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-340Z"/></svg>
+            <strong>Customise</strong>
+        </button>
+        </div>
+    </div>
+    <div class="upload">
+        <button><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="M440-160v-326L336-382l-56-58 200-200 200 200-56 58-104-104v326h-80ZM160-600v-120q0-33 23.5-56.5T240-800h480q33 0 56.5 23.5T800-720v120h-80v-120H240v120h-80Z"/></svg></button>
+    </div>
+    <div class="volume">
+        <div class="coins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m280-400 200-200 200 200H280Z"/></svg>
+            <span>#</span>
+            <span>Coin</span>
+        </div>
+            <div class="volumee">
+                <div class="cell">Price</div>
+                <div class="cell">1h</div>
+                <div class="cell">24h</div>
+                <div class="cell">7d</div>
+                <div class="cell">24h Volume</div>
+                <div class="cell">Market Cap</div>
+                <div class="cell">Last 7 days</div>
+            </div>
+    </div>
+
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">1</span><span><img src="https://assets.coingecko.com/coins/images/1/standard/bitcoin.png?1696501400" alt=""></span>
+            <strong>Bitcoin</strong><span id="btc">BTC</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">2</span><span><img src="https://assets.coingecko.com/coins/images/279/standard/ethereum.png?1696501628" alt=""></span>
+            <strong>Ethereum</strong><span id="btc">ETH</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">3</span><span><img src="https://assets.coingecko.com/coins/images/325/standard/Tether.png?1696501661" alt=""></span>
+            <strong>Tether</strong><span id="btc">USDT</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">4</span><span><img src="https://assets.coingecko.com/coins/images/4128/standard/solana.png?1718769756" alt=""></span>
+            <strong>Solana</strong><span id="btc">SOL</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">5</span><span><img src="https://assets.coingecko.com/coins/images/825/standard/bnb-icon2_2x.png?1696501970" alt=""></span>
+            <strong>Cardano</strong><span id="btc">ADA</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">6</span><span><img src="https://assets.coingecko.com/coins/images/44/standard/xrp-symbol-white-128.png?1696501442" alt=""></span>
+            <strong>TRON</strong><span id="btc">TRX</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">7</span><span><img src="https://assets.coingecko.com/coins/images/5/standard/dogecoin.png?1696501409" alt=""></span>
+            <strong>BNB</strong><span id="btc">BNB</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">8</span><span><img src="https://assets.coingecko.com/coins/images/6319/standard/usdc.png?1696506694" alt=""></span>
+            <strong>Shiba Inu</strong><span id="btc">Shib</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">9</span><span><img src="https://assets.coingecko.com/coins/images/13442/standard/steth_logo.png?1696513206" alt=""></span>
+            <strong>Dogecoin</strong><span id="btc">DODE</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">10</span><span><img src="https://assets.coingecko.com/coins/images/975/standard/cardano.png?1696502090" alt=""></span>
+            <strong>XRP</strong><span id="btc">XRP</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">11</span><span><img src="https://assets.coingecko.com/coins/images/1094/standard/tron-logo.png?1696502193" alt=""></span>
+            <strong>USDC</strong><span id="btc">USDC</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">12</span><span><img src="https://assets.coingecko.com/coins/images/11939/standard/shiba.png?1696511800" alt=""></span>
+            <strong>LidoStake</strong><span id="btc">STETH</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">13</span><span><img src="https://assets.coingecko.com/coins/images/12559/standard/Avalanche_Circle_RedWhite_Trans.png?1696512369" alt=""></span>
+            <strong>Toncoin</strong><span id="btc">TON</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">14</span><span><img src="https://assets.coingecko.com/coins/images/17980/standard/photo_2024-09-10_17.09.00.jpeg?1725963446" alt=""></span>
+            <strong>Wrap sETH</strong><span id="btc">PEPE</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">15</span><span><img src="https://assets.coingecko.com/coins/images/18834/standard/wstETH.png?1696518295" alt=""></span>
+            <strong>Avalanche</strong><span id="btc">AVAX</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">16</span><span><img src="https://assets.coingecko.com/coins/images/7598/standard/wrapped_bitcoin_wbtc.png?1696507857" alt=""></span>
+            <strong>WrapBitcoin</strong><span id="btc">WBTC</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">17</span><span><img src="https://assets.coingecko.com/coins/images/26375/standard/sui-ocean-square.png?1727791290" alt=""></span>
+            <strong>Sui</strong><span id="btc">SUI</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">18</span><span><img src="https://assets.coingecko.com/coins/images/877/standard/chainlink-new-logo.png?1696502009" alt=""></span>
+            <strong>WETH</strong><span id="btc">WETH</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">19</span><span><img src="https://assets.coingecko.com/coins/images/29850/standard/pepe-token.jpeg?1696528776" alt=""></span>
+            <strong>Pepe</strong><span id="btc">PEPE</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">20</span><span><img src="https://assets.coingecko.com/coins/images/780/standard/bitcoin-cash-circle.png?1696501932" alt=""></span>
+            <strong>NEAR Protocol</strong><span id="btc">NEAR</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">21</span><span><img src="https://static.coingecko.com/s/polkadot-73b0c058cae10a2f076a82dcade5cbe38601fad05d5e6211188f09eb96fa4617.gif" alt=""></span>
+            <strong>LEO Token</strong><span id="btc">LEO</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">22</span><span><img src="https://assets.coingecko.com/coins/images/1/standard/bitcoin.png?1696501400" alt=""></span>
+            <strong>Stellar</strong><span id="btc">XLM</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">23</span><span><img src="https://assets.coingecko.com/coins/images/1/standard/bitcoin.png?1696501400" alt=""></span>
+            <strong>LifeCoin</strong><span id="btc">LTC</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">24</span><span><img src="https://assets.coingecko.com/coins/images/1/standard/bitcoin.png?1696501400" alt=""></span>
+            <strong>Aptos</strong><span id="btc">APT</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">25</span><span><img src="https://assets.coingecko.com/coins/images/1/standard/bitcoin.png?1696501400" alt=""></span>
+            <strong>Wrapped eETH</strong><span id="btc">WEETH</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">26</span><span><img src="https://assets.coingecko.com/coins/images/1/standard/bitcoin.png?1696501400" alt=""></span>
+            <strong>Uniswap</strong><span id="btc">UNI</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">27</span><span><img src="https://assets.coingecko.com/coins/images/1/standard/bitcoin.png?1696501400" alt=""></span>
+            <strong>USDS</strong><span id="btc">USDS</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">28</span><span><img src="https://assets.coingecko.com/coins/images/1/standard/bitcoin.png?1696501400" alt=""></span>
+            <strong>Hedera</strong><span id="btc">HBAR</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">29</span><span><img src="https://assets.coingecko.com/coins/images/1/standard/bitcoin.png?1696501400" alt=""></span>
+            <strong>Cronos</strong><span id="btc">CRO</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">30</span><span><img src="https://assets.coingecko.com/coins/images/1/standard/bitcoin.png?1696501400" alt=""></span>
+            <strong>Internet Computer</strong><span id="btc">ICP</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">31</span><span><img src="https://assets.coingecko.com/coins/images/1/standard/bitcoin.png?1696501400" alt=""></span>
+            <strong>Kaspa</strong><span id="btc">KAS</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">32</span><span><img src="https://assets.coingecko.com/coins/images/1/standard/bitcoin.png?1696501400" alt=""></span>
+            <strong>Ethereum Classic</strong><span id="btc">ETC</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">33</span><span><img src="https://assets.coingecko.com/coins/images/1/standard/bitcoin.png?1696501400" alt=""></span>
+            <strong>Render</strong><span id="btc">RENDER</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">34</span><span><img src="https://assets.coingecko.com/coins/images/1/standard/bitcoin.png?1696501400" alt=""></span>
+            <strong>Bittensor</strong><span id="btc">TAO</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">35</span><span><img src="https://assets.coingecko.com/coins/images/1/standard/bitcoin.png?1696501400" alt=""></span>
+            <strong>POL (ex-MATRIC)</strong><span id="btc">POL</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">36</span><span><img src="https://assets.coingecko.com/coins/images/1/standard/bitcoin.png?1696501400" alt=""></span>
+            <strong>MANTRA</strong><span id="btc">OM</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">37</span><span><img src="https://assets.coingecko.com/coins/images/1/standard/bitcoin.png?1696501400" alt=""></span>
+            <strong>Dogwifhat</strong><span id="btc">WIF</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">38</span><span><img src="https://assets.coingecko.com/coins/images/1/standard/bitcoin.png?1696501400" alt=""></span>
+            <strong>BONK</strong><span id="btc">BONK</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">39</span><span><img src="https://assets.coingecko.com/coins/images/1/standard/bitcoin.png?1696501400" alt=""></span>
+            <strong>Ethena USDe</strong><span id="btc">USDE</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">40</span><span><img src="https://assets.coingecko.com/coins/images/1/standard/bitcoin.png?1696501400" alt=""></span>
+            <strong>Dai</strong><span id="btc">DAI</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">41</span><span><img src="https://assets.coingecko.com/coins/images/1/standard/bitcoin.png?1696501400" alt=""></span>
+            <strong>WhiteBit Coin</strong><span id="btc">WBT</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">42</span><span><img src="https://assets.coingecko.com/coins/images/1/standard/bitcoin.png?1696501400" alt=""></span>
+            <strong>Arbitrum</strong><span id="btc">ARB</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">43</span><span><img src="https://assets.coingecko.com/coins/images/1/standard/bitcoin.png?1696501400" alt=""></span>
+            <strong>Stacks</strong><span id="btc">STX</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg>
+            <span class="num">44</span>
+            <span>
+                <img src="https://assets.coingecko.com/coins/images/1/standard/bitcoin.png?1696501400" alt="">
+            </span>
+            <strong>Monero</strong>
+            <span id="btc">XMR</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">45</span><span><img src="https://assets.coingecko.com/coins/images/1/standard/bitcoin.png?1696501400" alt=""></span>
+            <strong>Filecoin</strong><span id="btc">FIL</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">46</span><span><img src="https://assets.coingecko.com/coins/images/1/standard/bitcoin.png?1696501400" alt=""></span>
+            <strong>OKB</strong><span id="btc">OKB</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">47</span><span><img src="https://assets.coingecko.com/coins/images/1/standard/bitcoin.png?1696501400" alt=""></span>
+            <strong>VeChain</strong><span id="btc">VET</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">48</span><span><img src="https://assets.coingecko.com/coins/images/1/standard/bitcoin.png?1696501400" alt=""></span>
+            <strong>Aave</strong>
+            <span id="btc">AAVE</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">49</span><span><img src="https://assets.coingecko.com/coins/images/1/standard/bitcoin.png?1696501400" alt=""></span>
+            <strong>Cosmub Hub</strong><span id="btc">ATOM</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="bitcoins">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg><span class="num">50</span><span><img src="https://assets.coingecko.com/coins/images/1/standard/bitcoin.png?1696501400" alt=""></span>
+            <strong>Injective</strong><span id="btc">INJ</span>
+        </div>
+        <div class="btc">
+            <button>Buy</button><span>$90,917.87</span><span class="hot"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="M480-360 280-560h400L480-360Z"/></svg>0.1%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>1.4%</span><span class="cool"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m280-400 200-200 200 200H280Z"/></svg>21.6%</span><span>$132,368,448,579</span><span>$1,798,548,325,184</span><span><img src="https://www.coingecko.com/coins/1/sparkline.svg" alt=""></span>
+        </div>
+    </div>
+   
+   
+    <div class="shows">
+        <div class="result">
+            <p>Showing 1 to 100 of 15275 results</p>
+            <p>
+                Frequently Asked Questions 
+                <a href="">Show</a> 
+            </p>
+        </div>
+        <div class="numbers">
+            <span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="10px" viewBox="0 -960 960 960" width="10px" fill="black"><path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z"/></svg>
+            </span>
+            <span class="stuff">
+                <button>1</button>
+            </span>
+            <span>
+                <a href="">2</a>
+            </span>
+            <span>
+                <a href=""> ... </a>
+            </span>
+            <span>
+                <a href="">153</a>
+            </span>
+            <span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="10px" viewBox="0 -960 960 960" width="10px" fill="black"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg>
+            </span>
+
+        </div>
+        <div class="rows">
+         <span>Rows</span>
+         <span class="hundred">
+            <button>
+                100 
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+            </button>
+        </span>
+        </div>
+    </div>
+    <h2 class="only_me"> Latest Crypto News </h2>
+    <div class="latest">
+        <div class="dodge">
+            <img src="https://assets.coingecko.com/articles/images/2129174/large/Picture82-1024x1024.png?1731877835" alt="">
+            <h4>
+                Sui Hits $3; Dogecoin (DOGE) <br> Leads Meme Craze – <br>IntelMarkets (INTL) Tipped to <br>Become the Next Big AI Crypto, <br>Undervalued at $0.045
+            </h4>
+            <p>Cripto News Flash</p>
+            <span>9 Minutes ago</span>
+        </div>
+        <div class="altcoins">
+            <img src="https://assets.coingecko.com/articles/images/2129165/large/News-articles-FI-Samyukhta-9-1000x600.webp?1731877315" alt="">
+            <h4>Why Memecoin can outshine <br>Altcoins during the next crypto <br>rally</h4>
+            <p>AMBCrypto</p>
+            <span>13 minutes ago</span>
+        </div>
+        <div class="launderer">
+            <img src="https://assets.coingecko.com/articles/images/2129162/large/pour-capital-into-bitcoin.jpg?1731877279" alt="">
+            <h4>BTC Launderer Given 'Lenient' <br> Three-years Prison Sentence <br>for Assisting With Fog <br> Case: Report</h4>
+            <p>The daily Hodli</p>
+            <span>13 minutes ago</span>
+        </div>
+        <div class="redefine">
+            <img src="https://assets.coingecko.com/articles/images/2129135/large/crypto-news-zircuitdex-option01.webp?1731876082" alt="">
+            <h4>DOT and XRP set to grow big, <br> but this new solid coin could <br> redefine market</h4>
+            <p>Crypto.news</p>
+            <span>39 minutes ago</span>
+        </div>
+    </div>
+    <div class="me">
+        <hr>
+    </div>
+    <div class="news">
+        <button>See More News</button>
+    </div>
+    <h2 class="only_me">Featured Articles</h2>
+    <div class="latest">
+        <div class="dodge">
+            <img src="https://assets.coingecko.com/posts/images/864/large/Crypto_Narratives.png?1705486035" alt=""><br><br>
+            <a href="">coverage</a><br><br>
+            <h4>
+                Pump.fun Guide: How to <br>  Create your Own Memecoins <br> and Quality for Upcming <br>Airdrop
+            </h4>
+            <p>Loke Choon Khei</p>
+            <span> <img class="star" src="data:image/png;base64,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" alt="star">4.21 (24 votes)</span>
+        </div>
+        <div class="altcoins">
+            <img src="https://assets.coingecko.com/posts/images/11494/large/What_Is_Goat_.png?1729840540" alt=""><br><br>
+            <a href="">Coins & Tokens</a><br><br>
+            <h4>How to Trade Memecoins in <br>2024</h4>
+            <p>Joel Zhao</p>
+            <span> <img class="star" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKwAAACUCAMAAAA5xjIqAAAAk1BMVEX/////wwn8////wQD+/vz//f/9wwD/vgD8wwz9/vn8wAD7xAD//fn7//v5///7//n82ob7/PD9+/P95Kj+zU7957z613b768L+0F/98dX99eX745386LX61G3/36L81Wn5xij22Gz8yT39wh/89d/83pH634X78sz+2H38/Or21GL59tj6zlT31Fn30Ez47KP57r1DoreaAAAJAklEQVR4nO1cCVPiTBOe9JyZIZMLhUDQbBKuFf32//+6bwaPFTeSABnIW+VTpaWWhIdO390ThH7wgx/8wBmI75Nbc+iEgAbxvZT3cUjh1lxaQZAfSaVk5KPhSxfIpFJSqmriD1+yKJkyTwiPTZNbM2kHZEx5Bkpl/wHJRvyVLF/dmkk7Zt4HZrfmchzER3OumGXKFJ+jIbtbQoJ47DFpyUrmjeOADJctoZB7jL1pAfNyoMMlCyhefHA1rBcxGq5HIHQt8F8Dw2I9YMkSHTHvE1ikh0sWxVyJv1yF4vGtGX0PeFDeAdTDQHWWhKPkhYkDruwlGYVD1AQSQKrkgWjNrykEAyRLCIkfsTiQLPPwY0wGGBgI1VmhDskaEysyPUT3RfQv7v0D/muI3ougWLB/yTIRD7K8mXPxL1lhcq/hAUalkv+SlaocDczXEmNE/+OsQQ08m9aSQdkY8XW8UA1aYGuxRawHlYQbV7qWrJGssbo1GpSrpTRZCamauAouVgm9NcHPCGD7OZE9BBbbQUnW1w8NnuDDI6R6NCS2cfE9V8+r/Fvz+wzIm63rDSwfkquNH4+RFexxSBXDusBNruANChfrWzP8C39zVAs8ITcD0VqjjtuqhSyrtgiGoLc+0WlDInsIPtdkCMIlJKy+DQjvwFU4iMBAID8SEN4hcxgE2fCxKTX8AjYdRJULk6IL2WoyBAMLoiMu9gMCR8GtmRrUxXG/9UaWFfX1uRFCjbcCUxwQZH4K0FJ24GoglyjwzUuI7yMwfoxexT3ofeJPCIC2vymvqVD8h6r5t/2/m9hAbPsGaedELUuwQKMkrrM8Xa541UWyTFR8tUzzrI6TEdpfgiC3HQUjkdF2nc+Xm11ZFlUlGVMeaw0JnjUwxRRjsqqKstxtlvN8vR1d2gajodElC/Q+1B4l27rOJnk6j6Y7xfge2KIDxwbsX/p6FaZ202ie5uunut4age8BFL0xCNvImgBubzKQZPtkGS6jaGGkWAkjFfMmHTzqKTAfHZu7I6y0F1G0TP9MMkPb2O9e1dqyCQJ0m8/vH6fj/X02d9lQlMqKUSilbLnaF1N7JXNJ4/iksVErCUO7KstyPH28n+dZe0ms69/CfFzzOmytQliO9qI9i3SPj4GZHU3v38Z2GTxsbyLn6nfd5jDiUnZwRNeAlGVbMfSERZfoeQUYzXhqIbtlXm9KeRmEx9oCNFnY6Nm31Z8KazBCLtq8MNSlFIrdWG8lU0KWdVtSmejZDndMTRxCSLyrdduWDSF6+8ybW61X5Kr4cwytJaYNc9uFbVncirD1Rgovtqhb5gBxZGQrbqW3wsg1irsWQUB1Klh/cfVEmOQs1Z13A2k4grS6lZUJWaTaDzs3y8HWrNU+J7gu0X2OsK+DTyqFE1iX8gY2ZtzrGk5eDAz1045fPU1QfPekW5Pur/AJhdnV2TL+PAN6VgsvgI1N46/F1ER5voEzWyFkFAZLfD0bM0XJMgjPnOuYuxEk6fUSMIbzJDh7fXFEQqrz65HNNQ3J6DyuFuCj9Vi5z8dNiB2v0aWL18Q3Lsx9MBNsl+lL+/gEUYLil9aZwaXg44QSemk7KTQqj5KNhx0KV3j4PkEJCk6OBg3wUbhyWPQKgVdha/elO1kazqUzr8Dk3ORYvQ2erMe9K85sxLUBF3fI9/viarUe7Jzjm8WSiyBwMUFUo757tevSQcdLlG5m0FDveo+9fNfaHDgPFOJFz2bGF4mjVn1AIbl/LXkvpmwvIDDeJEDdjceSFbOHvS7laqc3SqrVBVlLBwBKC964wHUilORF6vgUQ0Lgz9EVk85kcfEHLskHu4AgU/b2YGXMFLFume4R6PnlKaOQD/oqg+fwmV8sWsFfrsIVZuXl+SLzyqsMySGvejAwJv5cZVnioZd8hj1cg2tyzy43MCbZ5hpHXbc7dXnjw1xit3VOlaJMdZrZt8pWZcjxwjIlcMd7SGQM+J3rTS/i66iPutzOkyPdWzHTDJ+EY9xHj1kqPg4crycStD13g+MrMIv7K2kbMUJZbxMnkSHHWRcseyOLl45jGIHfvbUP8PTiVlwL2biPZPYVrIzd+i5YHz2QcBoqx2vrkPZXizOWulVaiPrrHDAWOS4YH3sJtW9kH90mXlnR33xBeEXmlOxE9dE0eIW51MQhVQLzTuWX6jhOx3NwuPE7mnYKCVyITqkZfnQWb40Mkm4dWoU7NW2YUglydHCUmPjFuwzwsJzPZfstEEzxeOSoWqDth2jsyVvsTU3I96fCqHfjSdxP4KkmbtiaVHnTKi+JpxO931//M5VYtnhlvHH1XByfkPFxssoUAGn8ujJAYDYXrMUr4LGzpx/AtjouVox/1aDfyWqoN21lRbV1FXEh/+6tlRTCfP2eHJ5QA5hM7fJ18/nhPe4ccSVo+R1ZYRfsynQG/oHj9H2YpYX9IN+5ELx0NACBZPGdfBTj4n4WwJe5NqEUSL2RnH0nWfwYu2l9Qj3+pv5i0nu2zz0jXx/DYv4ACLJn79vEcly7IUvWjb1OJZjRgPCIoUCYlpI1jtVV4apbnzd2D4WUqxkNj9R+fkhnkWwMfUzmbrj6UVN7HqtppnVyLMQTmmjIpqrBPBnfuMll4vGX9ETYIWGZxnp/HOcIWQOq47TE+Ouiq+JjNyeza3HQ8rbhSrKo7SzBJzxFyr7k8yc2l3RTLeRfMi5hxJIFJ9gH0dn4yzq5yXXcVAubw+fEMDxO7enAE8j6ppQfH6wBmCxx0z9TACjeSxq5twwxty6SnLAxZPVa11H1eXdUyEKT3r0XwDtXZjJ8xXcZPeepRgTo+gXbk1XvAsZB0HNcIATWH45LYK+caB2PzvA6oyTQ+q5Uf5WBr/tu1xMfckPWekpTDKrl1p6XPCdvtj4OoF4q/v5YJ55Dzwk4AUhfrdcEnWkd7jfIz9x0td/8esrU6wEpU4/3rLNUQ2q9jslOx3c6uLhuogB3Y5Poekb7U4B+6zATTZ/sWhcu57Wmlz8VhvgU6nlpNJfJp/51FkGkuFqZKECCy0//k8Akj0FmLxkBTRwk4L7fe9IxGjmqbh2VoUN4RsMPfvADhP4Pz+KI0n353uUAAAAASUVORK5CYII=" alt="star">4.38 (50 votes)</span>
+        </div>
+        <div class="launderer">
+            <img src="https://assets.coingecko.com/posts/images/11458/large/What_is_Pump.fun.png?1727407204" alt=""><br><br>
+            <a href="">Airdrops</a><br><br>
+            <h4>What are Meme Coins and <br> Types of Meme coins</h4>
+            <p class="name">Joel Agbo</p>
+            <span class="name"> <img class="star" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKwAAACUCAMAAAA5xjIqAAAAk1BMVEX/////wwn8////wQD+/vz//f/9wwD/vgD8wwz9/vn8wAD7xAD//fn7//v5///7//n82ob7/PD9+/P95Kj+zU7957z613b768L+0F/98dX99eX745386LX61G3/36L81Wn5xij22Gz8yT39wh/89d/83pH634X78sz+2H38/Or21GL59tj6zlT31Fn30Ez47KP57r1DoreaAAAJAklEQVR4nO1cCVPiTBOe9JyZIZMLhUDQbBKuFf32//+6bwaPFTeSABnIW+VTpaWWhIdO390ThH7wgx/8wBmI75Nbc+iEgAbxvZT3cUjh1lxaQZAfSaVk5KPhSxfIpFJSqmriD1+yKJkyTwiPTZNbM2kHZEx5Bkpl/wHJRvyVLF/dmkk7Zt4HZrfmchzER3OumGXKFJ+jIbtbQoJ47DFpyUrmjeOADJctoZB7jL1pAfNyoMMlCyhefHA1rBcxGq5HIHQt8F8Dw2I9YMkSHTHvE1ikh0sWxVyJv1yF4vGtGX0PeFDeAdTDQHWWhKPkhYkDruwlGYVD1AQSQKrkgWjNrykEAyRLCIkfsTiQLPPwY0wGGBgI1VmhDskaEysyPUT3RfQv7v0D/muI3ougWLB/yTIRD7K8mXPxL1lhcq/hAUalkv+SlaocDczXEmNE/+OsQQ08m9aSQdkY8XW8UA1aYGuxRawHlYQbV7qWrJGssbo1GpSrpTRZCamauAouVgm9NcHPCGD7OZE9BBbbQUnW1w8NnuDDI6R6NCS2cfE9V8+r/Fvz+wzIm63rDSwfkquNH4+RFexxSBXDusBNruANChfrWzP8C39zVAs8ITcD0VqjjtuqhSyrtgiGoLc+0WlDInsIPtdkCMIlJKy+DQjvwFU4iMBAID8SEN4hcxgE2fCxKTX8AjYdRJULk6IL2WoyBAMLoiMu9gMCR8GtmRrUxXG/9UaWFfX1uRFCjbcCUxwQZH4K0FJ24GoglyjwzUuI7yMwfoxexT3ofeJPCIC2vymvqVD8h6r5t/2/m9hAbPsGaedELUuwQKMkrrM8Xa541UWyTFR8tUzzrI6TEdpfgiC3HQUjkdF2nc+Xm11ZFlUlGVMeaw0JnjUwxRRjsqqKstxtlvN8vR1d2gajodElC/Q+1B4l27rOJnk6j6Y7xfge2KIDxwbsX/p6FaZ202ie5uunut4age8BFL0xCNvImgBubzKQZPtkGS6jaGGkWAkjFfMmHTzqKTAfHZu7I6y0F1G0TP9MMkPb2O9e1dqyCQJ0m8/vH6fj/X02d9lQlMqKUSilbLnaF1N7JXNJ4/iksVErCUO7KstyPH28n+dZe0ms69/CfFzzOmytQliO9qI9i3SPj4GZHU3v38Z2GTxsbyLn6nfd5jDiUnZwRNeAlGVbMfSERZfoeQUYzXhqIbtlXm9KeRmEx9oCNFnY6Nm31Z8KazBCLtq8MNSlFIrdWG8lU0KWdVtSmejZDndMTRxCSLyrdduWDSF6+8ybW61X5Kr4cwytJaYNc9uFbVncirD1Rgovtqhb5gBxZGQrbqW3wsg1irsWQUB1Klh/cfVEmOQs1Z13A2k4grS6lZUJWaTaDzs3y8HWrNU+J7gu0X2OsK+DTyqFE1iX8gY2ZtzrGk5eDAz1045fPU1QfPekW5Pur/AJhdnV2TL+PAN6VgsvgI1N46/F1ER5voEzWyFkFAZLfD0bM0XJMgjPnOuYuxEk6fUSMIbzJDh7fXFEQqrz65HNNQ3J6DyuFuCj9Vi5z8dNiB2v0aWL18Q3Lsx9MBNsl+lL+/gEUYLil9aZwaXg44QSemk7KTQqj5KNhx0KV3j4PkEJCk6OBg3wUbhyWPQKgVdha/elO1kazqUzr8Dk3ORYvQ2erMe9K85sxLUBF3fI9/viarUe7Jzjm8WSiyBwMUFUo757tevSQcdLlG5m0FDveo+9fNfaHDgPFOJFz2bGF4mjVn1AIbl/LXkvpmwvIDDeJEDdjceSFbOHvS7laqc3SqrVBVlLBwBKC964wHUilORF6vgUQ0Lgz9EVk85kcfEHLskHu4AgU/b2YGXMFLFume4R6PnlKaOQD/oqg+fwmV8sWsFfrsIVZuXl+SLzyqsMySGvejAwJv5cZVnioZd8hj1cg2tyzy43MCbZ5hpHXbc7dXnjw1xit3VOlaJMdZrZt8pWZcjxwjIlcMd7SGQM+J3rTS/i66iPutzOkyPdWzHTDJ+EY9xHj1kqPg4crycStD13g+MrMIv7K2kbMUJZbxMnkSHHWRcseyOLl45jGIHfvbUP8PTiVlwL2biPZPYVrIzd+i5YHz2QcBoqx2vrkPZXizOWulVaiPrrHDAWOS4YH3sJtW9kH90mXlnR33xBeEXmlOxE9dE0eIW51MQhVQLzTuWX6jhOx3NwuPE7mnYKCVyITqkZfnQWb40Mkm4dWoU7NW2YUglydHCUmPjFuwzwsJzPZfstEEzxeOSoWqDth2jsyVvsTU3I96fCqHfjSdxP4KkmbtiaVHnTKi+JpxO931//M5VYtnhlvHH1XByfkPFxssoUAGn8ujJAYDYXrMUr4LGzpx/AtjouVox/1aDfyWqoN21lRbV1FXEh/+6tlRTCfP2eHJ5QA5hM7fJ18/nhPe4ccSVo+R1ZYRfsynQG/oHj9H2YpYX9IN+5ELx0NACBZPGdfBTj4n4WwJe5NqEUSL2RnH0nWfwYu2l9Qj3+pv5i0nu2zz0jXx/DYv4ACLJn79vEcly7IUvWjb1OJZjRgPCIoUCYlpI1jtVV4apbnzd2D4WUqxkNj9R+fkhnkWwMfUzmbrj6UVN7HqtppnVyLMQTmmjIpqrBPBnfuMll4vGX9ETYIWGZxnp/HOcIWQOq47TE+Ouiq+JjNyeza3HQ8rbhSrKo7SzBJzxFyr7k8yc2l3RTLeRfMi5hxJIFJ9gH0dn4yzq5yXXcVAubw+fEMDxO7enAE8j6ppQfH6wBmCxx0z9TACjeSxq5twwxty6SnLAxZPVa11H1eXdUyEKT3r0XwDtXZjJ8xXcZPeepRgTo+gXbk1XvAsZB0HNcIATWH45LYK+caB2PzvA6oyTQ+q5Uf5WBr/tu1xMfckPWekpTDKrl1p6XPCdvtj4OoF4q/v5YJ55Dzwk4AUhfrdcEnWkd7jfIz9x0td/8esrU6wEpU4/3rLNUQ2q9jslOx3c6uLhuogB3Y5Poekb7U4B+6zATTZ/sWhcu57Wmlz8VhvgU6nlpNJfJp/51FkGkuFqZKECCy0//k8Akj0FmLxkBTRwk4L7fe9IxGjmqbh2VoUN4RsMPfvADhP4Pz+KI0n353uUAAAAASUVORK5CYII=" alt="star">3.93 (28 votes)</span>
+        </div>
+        <div class="redefine">
+            <img src="https://assets.coingecko.com/posts/images/11457/large/What_is_MOODENG_solana_crypto.png?1727420491" alt=""><br><br>
+            <a href="">Coins & Tokens</a><br><br>
+           <h4>What Are Bitcoin Runes? <br> Bringing Memecoins to Bitcoin</h4>
+            <p>Joel Agbo</p>
+            <span> <img class="star" src="data:image/png;base64,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" alt="star">4.58 (36 votes)</span>
+        </div>
+    </div>
+    <div class="me">
+        <hr>
+    </div>
+    <div class="news">
+        <button>See More Articles</button>
+    </div><hr>
+    <div class="gecko">
+        <div class="analysis">
+            <img src="https://static.coingecko.com/s/coingecko-logo-8903d34ce19ca4be1c81f0db30e924154750d208683fad7ae6f2ce06c76d0a56.png" alt="logo">
+            <p>CoinGecko provides a fundamental analysis of the crypto market. In addition to <br>
+                tracking price, volume and market capitalisation, CoinGecko tracks community <br>
+                growth, open-source code development, major events and on-chain metrics. </p>
+        </div>
+        <div class="options">
+            <div class="resources">
+                <p>Resources</p>
+                <ul>
+                    <li>Crypto News</li>
+                    <li>Bitcoin Treasurer</li>
+                    <li>Crypto Heatmap</li>
+                    <li>Cryto API</li>
+                </ul>
+                <P class="done">Donations</P>
+                <ul>
+                    <li>Bitcoin</li>
+                    <li>Ethereum</li>
+                </ul>
+            </div>
+            <div class="support">
+                <p>support</p>
+                <ul>
+                    <li>Request Form</li>
+                    <li>Advertising</li>
+                    <li>Candy Rewards Listing</li>
+                    <li>Help Center</li>
+                    <li>Bug Bounty</li>
+                    <li>FAQ</li>
+                </ul>
+            </div>
+            <div class="about">
+                <p>About CoinGecko</p>
+                <ul>
+                    <li>About Us</li>
+                    <li>
+                        Careers
+                        <button>Join Us</button>
+                    </li>
+                    <li>Company Blog</li>
+                    <li>Branding Guide</li>
+                    <li>Methodology</li>
+                    <li>Disclaimer</li>
+                    <li>Terms of Sercice</li>
+                    <li>Privacy Policy</li>
+                    <li>Ad Policy</li>
+                    <li>Cookie Preference</li>
+                </ul>
+            </div>
+            <div class="community">
+                <p>Community</p>
+                <ul>
+                    <li>X/Twitter</li>
+                    <li>Telegram Chat</li>
+                    <li>Telegram News</li>
+                    <li>Instagram</li>
+                    <li>Redit</li>
+                    <li>Discord</li>
+                    <li>Facebook</li>
+                    <li>Youtube</li>
+                    <li>Tiktok</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <div class="interest">
+        <div class="stay_up">
+            <p>Interested to stay up-to-date with cryptocurrencies?</p>
+        <span>Get the latest crypto news, updates, and reports by subscribing to our free newsletter.</span>
+        </div>
+        <div class="subscribe">
+            <form action="">
+                <input type="email" placeholder="Enter Your email address">
+                <button>Subscribe</button>
+            </form>
+        </div>
+    </div>
+    <hr>
+    <div class="rights">
+        <div class="reserve">
+            <span>
+                © 2024 CoinGecko. All Rights Reserved.
+            </span>
+        </div>
+        <div class="stores">
+            <img src="/home/king/Downloads/google_play_store.svg" alt="">
+            <img src="/home/king/Downloads/apple_app_store.svg" alt="">
+        </div>
+    </div>
+    <div class="disclaimer">
+        <a href="">IMPORTANT DISCLAIMER</a>: All content provided herein our website, hyperlinked sites, associated applications, forums, blogs, social media accounts and other platforms (“Site”) is for your <br>
+            general information only, procured from third party sources. We make no warranties of any kind in relation to our content, including but not limited to accuracy and updatedness. No part of the <br>
+            content that we provide constitutes financial advice, legal advice or any other form of advice meant for your specific reliance for any purpose. Any use or reliance on our content is solely at <br>
+            your own risk and discretion. You should conduct your own research, review, analyse and verify our content before relying on them. Trading is a highly risky activity that can lead to major <br>
+            losses, please therefore consult your financial advisor before making any decision. No content on our Site is meant to be a solicitation or offer.
+    </div>
+</body>
+</html>
